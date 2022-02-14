@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="place">
+          <input class="input" type="text">
+          <button onclick="search()" class="button">Search</button>
+          <div class="container"></div>
+        </div>
+        <div class="weather_data">
+          <div class="x">
+            <span class="day">Monday, 8:00 PM</span>
+          </div>
+          <div class="y">
+            <span class="day">Broken Clouds</span>
+          </div>
+          <div class="z">
+            <div id="a"><img class="img" draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png"></div>
+            <div id="b">
+              <span id="a" class="temp">23</span>
+              <span class="temp_type">°C</span>
+            </div>
+          </div>
+        </div>
+        <div class="top_nav">
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+        </div>
+        <div class="bot_nav">
+          <div onclick="changeCurrent(0)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(1)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(2)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(3)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(4)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(5)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(6)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+          <div onclick="changeCurrent(7)" class="card">
+            <span id="houer"></span>
+            <img draggable="false" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <span id="min">Hum: 180% </span>
+          </div>
+        </div>
+        <canvas class="draw" width="900" height="600"></canvas>
+      </div>
+    <script src="script.js"></script>
+</body>
+</html>

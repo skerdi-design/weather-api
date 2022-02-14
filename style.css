@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  body,
+  html {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(33, 16, 35);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 500px;
+  }
+  .app {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    transform: rotateY(0deg) rotatex(0deg) scale(0.8);
+    background-image: url("https://vistapointe.net/images/firewatch-5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 5px rgb(57, 25, 61);
+    transition: all 0.3s;
+  }
+  .app .draw {
+    width: 900px;
+    height: 600px;
+    display: block;
+    border-radius: 20px;
+  }
+  
+  .app .place {
+    position: absolute;
+    height: 350px;
+    right: 100px;
+    top: 40px;
+    font-size: 22px;
+    width: 260px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 3px;
+    border-radius: 5px;
+  }
+  .app .place .input {
+    position: absolute;
+    border: none;
+    outline: none;
+    left: 0px;
+    top: 0px;
+    font-size: 22px;
+    width: 260px;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: sans-serif;
+    color: rgba(0, 229, 255, 1);
+    padding: 5px;
+  }
+  
+  .app .place .container {
+    position: absolute;
+    border: 0px solid green;
+    height: 100%;
+    width: 100%;
+    top: 37px;
+    left: 0;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: all;
+    font-family: sans-serif;
+    z-index: 10;
+  }
+  .app .place .button {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 229, 255, 1);
+    font-size: 20px;
+    padding: 7px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .app .place .button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .app .place .button:active {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .app .place .input:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .app .place .input:focus ~ .container,
+  .app .place .input:focus ~ .button {
+    opacity: 1;
+  }
+  .app .place .container .div {
+    background-color: rgba(0, 0, 0, 0);
+    height: 40px;
+    color: rgba(0, 229, 255, 1);
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+  }
+  .app .place .container div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .app .place .container .div .match {
+    display: inline;
+    background-color: rgba(33, 16, 35, 0.7);
+    box-shadow: 0px 0px 4px 1px rgba(33, 16, 35, 0.7);
+  }
+  
+  .app .weather_data {
+    position: absolute;
+    width: 220px;
+    height: 145px;
+    top: 40px;
+    left: 120px;
+    color: rgba(0, 229, 255, 1);
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  .app .weather_data div {
+    border: px solid red;
+    width: 100%;
+    font-size: 20px;
+  }
+  .app .weather_data .x,
+  .app .weather_data .y {
+    height: 40px;
+    padding: 2px;
+  }
+  .app .weather_data .z {
+    border: px solid black;
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .app .weather_data .z .img {
+    border: 0px solid black;
+    height: 100%;
+    width: 84px;
+    transform: scale(1.5);
+  }
+  .app .weather_data .z div {
+    border: px solid black;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app .weather_data .z .temp {
+    font-size: 40px;
+  }
+  
+  .app .top_nav {
+    border: 0px solid black;
+    display: flex;
+    position: absolute;
+    bottom: 135px;
+    width: 90%;
+    height: 120px;
+    z-index: 4;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    flex-direction: row;
+    justify-content: center;
+    font-family: sans-serif;
+    overflow: visible;
+  }
+  .app .top_nav div {
+    border: px solid black;
+    width: 90px;
+    height: 40px;
+    margin-left: 9px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    top: -0px;
+    transition: all 0.1s;
+  }
+  .app .top_nav div p {
+    color: rgba(0, 229, 255, 1);
+    font-size: 18px;
+    position: absolute;
+  }
+  
+  .app .bot_nav {
+    border: px solid black;
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+    height: 120px;
+    z-index: 4;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    font-family: sans-serif;
+  }
+  .app .bot_nav div {
+    border: px solid black;
+    width: 90px;
+    height: 100%;
+    margin-left: 9px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  .app .bot_nav div:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .app .bot_nav div:active {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+  .app .bot_nav div span {
+    color: rgba(0, 229, 255, 0.8);
+    font-size: 16px;
+    text-align: center;
+    padding: 2px;
+  }
+  .app .bot_nav div img {
+    width: 86%;
+    height: 100px;
+    transform: scale(1.2);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 229, 255, 0.6);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 229, 255, 0.8);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 229, 255, 1);
+  }
